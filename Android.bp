@@ -1,0 +1,31 @@
+//
+// Copyright (C) 2026 The PenguinOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_prebuilt_library_shared {
+    name: "libaacvibrator",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "richtap/lib64/libaacvibrator.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    ignore_max_page_size: true,
+    vendor: true,
+}
